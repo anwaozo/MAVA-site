@@ -109,8 +109,8 @@ const Hero = () => {
                 objectFit="cover"
                 src="./static/Group 1.png"
                 alt="Dan Abramov"
-                w={{ base: "500px", md: "350px", xl: "500px" }}
-                h={{ base: "500px", md: "350px", xl: "500px" }}
+                w={{ base: "550px", md: "350px", xl: "500px" }}
+                h={{ base: "550px", md: "350px", xl: "500px" }}
               />
             </Flex>
           </Box>
