@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <Flex
       backgroundImage="url('./static/MAVA-Wills-BG.jpg')"
-      h={{ base: "120vh", md: "full" }}
+      h={{ base: "140vh", md: "full" }}
       w="full"
       backgroundSize={"cover"}
       backgroundPosition={{ base: "center", md: " center" }}
@@ -94,7 +94,7 @@ const Hero = () => {
             </HStack>
 
             <HStack
-              pt={{ base: "1rem", md: "1rem", lg: "2rem" }}
+              pt={{ base: "2rem", md: "1rem", lg: "2rem" }}
               spacing="5"
               flexWrap="wrap"
               justifyContent={{ base: "center", md: "left" }}
@@ -103,20 +103,17 @@ const Hero = () => {
               <Socials />
             </HStack>
           </Box>
-
-          <Flex
-            display={{ base: "block", lg: "block" }}
-            position={{ base: "absolute", md: "static" }}
-            top="7%"
-          >
-            <Image
-              objectFit="cover"
-              src="./static/Group 1.png"
-              alt="Dan Abramov"
-              w={{ base: "500px", md: "350px", xl: "500px" }}
-              h={{ base: "500px", md: "350px", xl: "500px" }}
-            />
-          </Flex>
+          <Box position={{ base: "absolute", md: "static" }} top="7%">
+            <Flex display={{ base: "block", lg: "block" }}>
+              <Image
+                objectFit="cover"
+                src="./static/Group 1.png"
+                alt="Dan Abramov"
+                w={{ base: "500px", md: "350px", xl: "500px" }}
+                h={{ base: "500px", md: "350px", xl: "500px" }}
+              />
+            </Flex>
+          </Box>
         </Flex>
       </Container>
     </Flex>

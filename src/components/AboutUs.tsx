@@ -69,6 +69,7 @@ const AboutUs = () => {
               color="black"
               bgGradient="linear(to-t, #94f1a5,#0c600e)"
               bgClip="text"
+              pb="2rem"
             >
               Our Story
             </Heading>

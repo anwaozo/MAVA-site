@@ -18,6 +18,8 @@ const Socials = () => {
             border="1px solid"
             borderRadius="100px"
             p="2px"
+            cursor={"pointer"}
+            _hover={{ bg: "#0c600e" }}
           />
         </Link>
       ))}
