@@ -7,6 +7,7 @@ import {
   Heading,
   chakra,
   Center,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -14,7 +15,7 @@ const AboutUs = () => {
   return (
     <chakra.section id="about" bg="#f7f7f7">
       <Stack
-        py={{ base: 10, lg: 40 }}
+        py={{ base: 20, lg: 40 }}
         px={{ base: 8, lg: 28 }}
         direction={{ base: "column-reverse", lg: "row" }}
         spacing={19}
@@ -41,8 +42,8 @@ const AboutUs = () => {
             <Text
               fontSize={{ base: "sm", md: "inherit" }}
               lineHeight={{ md: "8" }}
-              color="black"
               textAlign={{ base: "center", lg: "left" }}
+              color={useColorModeValue("gray.600", "gray.400")}
             >
               "Motive Africa Visual Academy is an Academy that helps people who
               can't afford visual skill acquire them. We not only teach visual
@@ -63,7 +64,7 @@ const AboutUs = () => {
             <Heading
               display={{ base: "flex", md: "none" }}
               fontWeight="800"
-              fontSize="4xl"
+              fontSize="3xl"
               textAlign={{ base: "center", lg: "center" }}
               color="black"
               bgGradient="linear(to-t, #94f1a5,#0c600e)"
@@ -82,8 +83,8 @@ const AboutUs = () => {
                 objectFit={"cover"}
                 src="/static/about.jpg"
                 rounded="lg"
-                w={{ base: "300px", md: "400px" }}
-                h={{ base: "300px", md: "400px" }}
+                w={{ base: "250px", md: "400px" }}
+                h={{ base: "250px", md: "400px" }}
                 borderRadius={{ base: "150px", md: "200px" }}
               />
             </Center>

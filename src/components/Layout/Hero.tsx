@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <Flex
       backgroundImage="url('./static/MAVA-Wills-BG.jpg')"
-      h={{ base: "140vh", md: "full" }}
+      h={{ base: "120vh", md: "full" }}
       w="full"
       backgroundSize={"cover"}
       backgroundPosition={{ base: "center", md: " center" }}
@@ -71,7 +71,7 @@ const Hero = () => {
               <Button
                 color="#fff"
                 bgGradient="linear(to-l, #94f1a5, #0c600e)"
-                w={{ sm: "150px", md: "120px", lg: "150px" }}
+                w={{ base: "150px", md: "120px", lg: "150px" }}
                 borderRadius="20px"
                 boxShadow="md"
                 position={"static"}
@@ -80,7 +80,7 @@ const Hero = () => {
               </Button>
               <Button
                 variant="outline"
-                w={{ sm: "150px", md: "120px", lg: "150px" }}
+                w={{ base: "150px", md: "120px", lg: "150px" }}
                 bg="transparent"
                 borderRadius="20px"
                 boxShadow="md"

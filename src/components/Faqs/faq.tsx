@@ -8,7 +8,7 @@ const Faqs = () => {
       <Container maxW={{ base: "7xl", xl: "7xl", "2xl": "80%" }} py="20">
         <VStack px={{ base: "10px" }}>
           <Heading
-            fontSize={{ base: "4xl", md: "4xl" }}
+            fontSize={{ base: "3xl", md: "4xl" }}
             fontWeight="bold"
             color="black"
             textAlign={"center"}
