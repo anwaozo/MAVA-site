@@ -16,7 +16,7 @@ const Socials = () => {
             fontSize={"2rem"}
             position={"static"}
             border="1px solid"
-            borderRadius="100px"
+            borderRadius={{ base: "0px", md: "100px" }}
             p="2px"
             cursor={"pointer"}
             _hover={{ bg: "#0c600e" }}

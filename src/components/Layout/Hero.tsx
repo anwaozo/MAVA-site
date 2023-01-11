@@ -9,6 +9,7 @@ import {
   Flex,
   Container,
   Center,
+  VStack,
 } from "@chakra-ui/react";
 
 import Socials from "../Socials";
@@ -17,7 +18,7 @@ const Hero = () => {
   return (
     <Flex
       backgroundImage="url('./static/MAVA-Wills-BG.jpg')"
-      h={{ base: "140vh", md: "full" }}
+      h={{ base: "100%", md: "full" }}
       w="full"
       backgroundSize={"cover"}
       backgroundPosition={{ base: "center", md: " center" }}
@@ -25,7 +26,7 @@ const Hero = () => {
     >
       <Container maxWidth={"1200px"} p="0px">
         <Flex flexWrap="wrap" justifyContent={"center"} alignItems="center">
-          <Box
+          <VStack
             alignItems="left"
             fontSize={{ sm: "15px", md: "12px", lg: "15px" }}
             textAlign={{ base: "center", md: "left" }}
@@ -94,7 +95,7 @@ const Hero = () => {
             </HStack>
 
             <HStack
-              pt={{ base: "2rem", md: "1rem", lg: "2rem" }}
+              pt={{ base: "1rem", md: "1rem", lg: "2rem" }}
               spacing="5"
               flexWrap="wrap"
               justifyContent={{ base: "center", md: "left" }}
@@ -102,9 +103,20 @@ const Hero = () => {
             >
               <Socials />
             </HStack>
-          </Box>
-          <Box position={{ base: "absolute", md: "static" }} top="7%">
-            <Flex display={{ base: "block", lg: "block" }}>
+            <Flex display={{ base: "block", lg: "none" }}>
+              <Center>
+                <Image
+                  objectFit="cover"
+                  src="./static/WEB BEN (1).png"
+                  alt="Dan Abramov"
+                  w={{ base: "400px", md: "350px", xl: "500px" }}
+                  h={{ base: "400px", md: "350px", xl: "500px" }}
+                />
+              </Center>
+            </Flex>
+          </VStack>
+          <Box top="9%">
+            <Flex display={{ base: "none", lg: "block" }}>
               <Image
                 objectFit="cover"
                 src="./static/Group 1.png"
