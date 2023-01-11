@@ -36,7 +36,7 @@ const Hero = () => {
           >
             <Heading
               fontWeight="800"
-              mb={{ base: "1rem", md: "2px", xl: "1rem" }}
+              mb={{ base: "0rem", md: "2px", xl: "1rem" }}
               color="#696969"
               lineHeight={{ base: "40px", xl: "50px" }}
               fontSize={{ base: "45px", md: "40px", xl: "55px" }}
@@ -64,7 +64,7 @@ const Hero = () => {
             </chakra.p>
 
             <HStack
-              pt="1rem"
+              pt={{ base: "0rem", md: "1rem" }}
               flexWrap="wrap"
               justifyContent={{ base: "center", md: "left" }}
               alignItems={{ base: "center", md: "left" }}
@@ -95,7 +95,7 @@ const Hero = () => {
             </HStack>
 
             <HStack
-              pt={{ base: "1rem", md: "1rem", lg: "2rem" }}
+              pt={{ base: "0.5rem", md: "1rem", lg: "2rem" }}
               spacing="5"
               flexWrap="wrap"
               justifyContent={{ base: "center", md: "left" }}
@@ -109,8 +109,8 @@ const Hero = () => {
                   objectFit="cover"
                   src="./static/WEB BEN (1).png"
                   alt="Dan Abramov"
-                  w={{ base: "400px", md: "350px", xl: "500px" }}
-                  h={{ base: "400px", md: "350px", xl: "500px" }}
+                  w={{ base: "420px", md: "350px", xl: "500px" }}
+                  h={{ base: "420px", md: "350px", xl: "500px" }}
                 />
               </Center>
             </Flex>
