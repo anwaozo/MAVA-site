@@ -26,14 +26,4 @@ export const CARD_DATA: CardData[] = [
     img: "/avatars/IMG_4.jpg",
     name: "AJAYI OMOTENIOLA",
   },
-  {
-    text: "The best thing that happen to me this year was getting to know about MAVA. Learning Photography has been a smooth ride with MAVA, I've been able to learn so many things about photography and outside photography. I met so many people with different ideas, i connected with different people. Some of the people we look up to on social media, MAVA brought them to us in person and it was amazing. One of the things i learnt in MAVA was not to box yourself into a position. we're to spread our wings and fly.",
-    img: "/avatars/IMG_5.jpg",
-    name: "AYOOLA TOBILOBA",
-  },
-  {
-    text: "Motive Africa Visual Academy is the place to be for all aspiring photographers. Not only is the workshop free, but students are also trained to be skilled photographers. They're are trained be independent individuals with the needed skills to survive in the photography world. It's feels good to be here.",
-    img: "/avatars/IMG_3.jpg",
-    name: "BARAKAT OLAMIDE ADEGBOYE",
-  },
 ];

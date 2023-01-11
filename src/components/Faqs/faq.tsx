@@ -6,9 +6,9 @@ const Faqs = () => {
   return (
     <chakra.section id="faqs" bg="#fff">
       <Container maxW={{ base: "7xl", xl: "7xl", "2xl": "80%" }} py="20">
-        <VStack>
+        <VStack px={{ base: "10px" }}>
           <Heading
-            fontSize={{ base: "md", md: "4xl" }}
+            fontSize={{ base: "4xl", md: "4xl" }}
             fontWeight="bold"
             color="black"
             textAlign={"center"}

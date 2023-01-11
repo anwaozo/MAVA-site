@@ -14,7 +14,7 @@ const AboutUs = () => {
   return (
     <chakra.section id="about" bg="#f7f7f7">
       <Stack
-        py={{ base: 20, lg: 40 }}
+        py={{ base: 10, lg: 40 }}
         px={{ base: 8, lg: 28 }}
         direction={{ base: "column-reverse", lg: "row" }}
         spacing={19}
@@ -28,6 +28,7 @@ const AboutUs = () => {
             maxW={{ base: "full", lg: "lg" }}
           >
             <Heading
+              display={{ base: "none", md: "flex" }}
               fontWeight="800"
               fontSize="4xl"
               textAlign={{ base: "center", lg: "center" }}
@@ -38,7 +39,8 @@ const AboutUs = () => {
               Our Story
             </Heading>
             <Text
-              lineHeight={8}
+              fontSize={{ base: "sm", md: "inherit" }}
+              lineHeight={{ md: "8" }}
               color="black"
               textAlign={{ base: "center", lg: "left" }}
             >
@@ -56,19 +58,37 @@ const AboutUs = () => {
             </Text>
           </Stack>
         </Flex>
-        <Flex display={{ base: "block", lg: "block" }} pt="2.5rem">
+        <Box>
           <Center>
-            <Image
-              alt={"Login Image"}
-              objectFit={"cover"}
-              src="/static/about.jpg"
-              rounded="lg"
-              w={{ base: "200px", md: "400px" }}
-              h={{ base: "200px", md: "400px" }}
-              borderRadius={{ base: "150px", md: "200px" }}
-            />
+            <Heading
+              display={{ base: "flex", md: "none" }}
+              fontWeight="800"
+              fontSize="4xl"
+              textAlign={{ base: "center", lg: "center" }}
+              color="black"
+              bgGradient="linear(to-t, #94f1a5,#0c600e)"
+              bgClip="text"
+            >
+              Our Story
+            </Heading>
           </Center>
-        </Flex>
+          <Flex
+            display={{ base: "block", lg: "block" }}
+            pt={{ base: "1rem", md: "2.5rem" }}
+          >
+            <Center>
+              <Image
+                alt={"Login Image"}
+                objectFit={"cover"}
+                src="/static/about.jpg"
+                rounded="lg"
+                w={{ base: "300px", md: "400px" }}
+                h={{ base: "300px", md: "400px" }}
+                borderRadius={{ base: "150px", md: "200px" }}
+              />
+            </Center>
+          </Flex>
+        </Box>
       </Stack>
     </chakra.section>
   );

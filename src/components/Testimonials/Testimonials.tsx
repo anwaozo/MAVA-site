@@ -18,7 +18,7 @@ const Testimonials = () => {
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={"center"}>
           <Heading
-            fontSize={{ base: "md", md: "4xl" }}
+            fontSize={{ base: "4xl", md: "4xl" }}
             fontWeight="bold"
             color="black"
             textAlign={"center"}

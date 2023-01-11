@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <Flex
       backgroundImage="url('./static/MAVA-Wills-BG.jpg')"
-      h={"full"}
+      h={{ base: "140vh", md: "full" }}
       w="full"
       backgroundSize={"cover"}
       backgroundPosition={{ base: "center", md: " center" }}
@@ -30,7 +30,7 @@ const Hero = () => {
             fontSize={{ sm: "15px", md: "12px", lg: "15px" }}
             textAlign={{ base: "center", md: "left" }}
             w={{ base: "500px", md: "350px", lg: "500px", xl: "570px" }}
-            pt={{ base: "2rem", md: "6rem", lg: "8rem" }}
+            pt={{ base: "3rem", md: "6rem", lg: "8rem" }}
             pl={{ md: "2rem" }}
           >
             <Heading
@@ -43,7 +43,7 @@ const Hero = () => {
               <chakra.span
                 bgGradient="linear(to-t, #94f1a5,#0c600e)"
                 bgClip="text"
-                fontSize={{ sm: "55px", md: "50px", xl: "75px" }}
+                fontSize={{ base: "55px", md: "50px", xl: "75px" }}
                 fontWeight="800"
                 w={{ base: "100%", md: "100px" }}
               >
@@ -104,7 +104,11 @@ const Hero = () => {
             </HStack>
           </Box>
 
-          <Flex display={{ base: "block", lg: "block" }}>
+          <Flex
+            display={{ base: "block", lg: "block" }}
+            position={{ base: "absolute", md: "static" }}
+            top="7%"
+          >
             <Image
               objectFit="cover"
               src="./static/Group 1.png"
