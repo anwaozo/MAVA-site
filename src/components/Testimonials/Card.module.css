@@ -1,0 +1,13 @@
+.item {
+  min-height: 40rem;
+  width: 33%;
+  padding: 40px;
+}
+
+.inner-carousel {
+  display: flex;
+}
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+}

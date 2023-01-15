@@ -6,6 +6,7 @@ import {
   useColorModeValue,
   Text,
   Heading,
+  Center,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -18,12 +19,13 @@ export const TestimonialContent = ({ children }: { children: ReactNode }) => {
       rounded={"xl"}
       align={"center"}
       pos={"relative"}
+      w={{ base: "100%", md: "initial" }}
       _after={{
         content: `""`,
         w: 0,
         h: 0,
         borderLeft: "solid transparent",
-        borderLeftWidth: 16,
+        borderLeftWidth: 10,
         borderRight: "solid transparent",
         borderRightWidth: 16,
         borderTop: "solid",
@@ -49,7 +51,7 @@ export const TestimonialText = ({ children }: { children: ReactNode }) => {
     <Text
       textAlign={"center"}
       color={useColorModeValue("gray.600", "gray.400")}
-      fontSize={"sm"}
+      fontSize={{ base: "12px", md: "sm" }}
     >
       {children}
     </Text>
@@ -68,6 +70,7 @@ export const TestimonialAvatar = ({
   return (
     <Flex align={"center"} mt={8} direction={"column"}>
       <Avatar src={src} mb={2} />
+
       <Stack spacing={-1} align={"center"}>
         <Text fontWeight={600}>{name}</Text>
         <Text fontSize={"sm"} color={useColorModeValue("gray.600", "gray.400")}>

@@ -22,8 +22,18 @@ export const CARD_DATA: CardData[] = [
   },
 
   {
-    text: "It's been an amazing and stressfull journey as a student at MAVA, but it's been worth the stress. Two months of intensive teaching & practicals and also learning the basics  of Photography. We've had experienced photographers coming over to teach us for free! I am honestly forever grateful to MAVA for finding me worthy of this opportunity, Thank you so much MAVA!",
+    text: "These past weeks has been really amazing, beautiful, and resourceful at Motive Africa Visual Academy. I have not really consistently attend/do a thing, but the beautiful things done at MAVA kept me coming and coming that i really do not want to miss a day, of course i did not. The values shared cannot be seen just anywhere for free, the facilitators were top-notch professional in this field, fellow students are intelligent set of people. The whole experience was heavenly. Thanks to MAVA.",
     img: "/avatars/IMG_4.jpg",
     name: "AJAYI OMOTENIOLA",
+  },
+  {
+    text: "The best thing that happen to me this year was getting to know about MAVA. Learning Photography has been a smooth ride with MAVA, I've been able to learn so many things about photography and outside photography. I met so many people with different ideas, i connected with different people. Some of the people we look up to on social media, MAVA brought them to us in person and it was amazing. One of the things i learnt in MAVA was not to box yourself into a position. we're to spread our wings and fly.",
+    img: "/avatars/IMG_5.jpg",
+    name: "AYOOLA TOBILOBA",
+  },
+  {
+    text: "The free photography workshop organized by Motive Africa Visual Studio was an amazing experience. The classes were designed to provide maximum personal benefit to the present set of creatives at this batch. MAVA as an academy is a dialogue driven place which enhance feedback and positive growth in not just skill acquisition but also in character development and communication skills. In one word, MAVA is a plus to Ogun state and soonest promises to be a plus to Africa as a continent. Thank you Motive Africa for all the privleges.",
+    img: "/avatars/IMG_3.jpg",
+    name: "BARAKAT OLAMIDE ADEGBOYE",
   },
 ];
