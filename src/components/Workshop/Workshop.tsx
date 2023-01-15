@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   Text,
   Button,
+  VStack,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { WORKSHOP_DATA } from "src/data/WorkshopImages";
@@ -60,11 +61,11 @@ const Workshop = () => {
                 key={index}
                 flex="none"
                 h={{ base: "397px", md: "520px" }}
-                w={{ base: "306px", md: "450px" }}
+                w={{ base: "295px", md: "450px" }}
                 borderRadius="5px"
                 zIndex={"10"}
                 mt="3rem"
-                ml="2rem"
+                ml={{ base: "20px", md: "0px" }}
                 p={{ base: "0px", md: "20px" }}
               >
                 <Image
@@ -74,22 +75,34 @@ const Workshop = () => {
                   pointerEvents="none"
                   w={{ base: "100%", md: "100%" }}
                   h={{ base: "100%", md: "100%" }}
-                  boxShadow="2xl"
+                  boxShadow="lg"
                 />
               </Box>
             ))}
           </Flex>
         </Box>
-        <Button
-          color="#fff"
-          bgGradient="linear(to-l, #94f1a5, #0c600e)"
-          w={{ base: "full", md: "120px", lg: "full" }}
-          borderRadius="20px"
-          boxShadow="md"
-          my="20px"
-        >
-          Apply now
-        </Button>
+        <VStack w={{ base: "full", md: "120px", lg: "full" }}>
+          <Button
+            color="#fff"
+            bgGradient="linear(to-l, #94f1a5, #0c600e)"
+            w={{ base: "80%", lg: "50%" }}
+            borderRadius="20px"
+            boxShadow="md"
+            my="20px"
+          >
+            Apply now
+          </Button>
+          <Button
+            color="#fff"
+            bgGradient="linear(to-l, #94f1a5, #0c600e)"
+            w={{ base: "80%", lg: "50%" }}
+            borderRadius="20px"
+            boxShadow="md"
+            my="20px"
+          >
+            Chat with Us
+          </Button>
+        </VStack>
       </Box>
     </Box>
   );
