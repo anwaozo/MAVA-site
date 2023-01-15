@@ -21,7 +21,7 @@ const NavBar = () => {
       boxShadow="sm"
       position="fixed"
       w="full"
-      zIndex="10"
+      zIndex="20"
       backgroundImage="url('./static/MAVA-Website-BG (2).jpg')"
       backgroundPosition={{ base: "center", md: " center" }}
     >
