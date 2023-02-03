@@ -24,7 +24,7 @@ export const FOOTER_DATA: FooterLinksType[] = [
   {
     id: 3,
     title: "Blog",
-    href: "https://blog.sendhood.com/",
+    href: "",
   },
 ];
 

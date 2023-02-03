@@ -10,9 +10,12 @@ import {
   Container,
   Center,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 
 import Socials from "../Socials";
+import { motion } from "framer-motion";
+import link from "next/link";
 
 const Hero = () => {
   return (
@@ -70,12 +73,19 @@ const Hero = () => {
               alignItems={{ base: "center", md: "left" }}
             >
               <Button
+                as={Link}
+                href="#workshop"
                 color="#fff"
                 bgGradient="linear(to-l, #94f1a5, #0c600e)"
                 w={{ base: "150px", md: "120px", lg: "150px" }}
                 borderRadius="20px"
                 boxShadow="md"
                 position={"static"}
+                _hover={{
+                  bg: "invisible",
+                  textDecor: "none",
+                }}
+                _focus={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
               >
                 Apply now
               </Button>
@@ -104,27 +114,37 @@ const Hero = () => {
               <Socials />
             </HStack>
             <Flex display={{ base: "block", lg: "none" }}>
-              <Center>
-                <Image
-                  objectFit="cover"
-                  src="./static/WEB BEN (1).png"
-                  alt="Dan Abramov"
-                  w={{ base: "420px", md: "350px", xl: "500px" }}
-                  h={{ base: "420px", md: "350px", xl: "500px" }}
-                />
-              </Center>
+              <motion.div
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5, delayChildren: 0.5 }}
+              >
+                <Center>
+                  <Image
+                    objectFit="cover"
+                    src="./static/WEB BEN (1).png"
+                    alt="Dan Abramov"
+                    w={{ base: "320px", md: "350px", xl: "500px" }}
+                    h={{ base: "320px", md: "350px", xl: "500px" }}
+                  />
+                </Center>
+              </motion.div>
             </Flex>
           </VStack>
           <Box top="9%">
-            <Flex display={{ base: "none", lg: "block" }}>
-              <Image
-                objectFit="cover"
-                src="./static/Group 1.png"
-                alt="Dan Abramov"
-                w={{ base: "550px", md: "350px", xl: "500px" }}
-                h={{ base: "550px", md: "350px", xl: "500px" }}
-              />
-            </Flex>
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5, delayChildren: 0.5 }}
+            >
+              <Flex display={{ base: "none", lg: "block" }}>
+                <Image
+                  objectFit="cover"
+                  src="./static/Group 1.png"
+                  alt="Dan Abramov"
+                  w={{ base: "550px", md: "350px", xl: "500px" }}
+                  h={{ base: "550px", md: "350px", xl: "500px" }}
+                />
+              </Flex>
+            </motion.div>
           </Box>
         </Flex>
       </Container>
