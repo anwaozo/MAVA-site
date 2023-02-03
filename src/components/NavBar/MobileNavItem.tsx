@@ -1,9 +1,17 @@
 import React from "react";
-import { Flex, Text, Stack, Link, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Text,
+  Stack,
+  Link,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 import { NavItem } from "src/data/NavItem";
 
 const MobileNavItem = ({ label, href }: NavItem) => {
+  const { onClose } = useDisclosure();
   return (
     <Stack spacing={4}>
       <Flex
@@ -15,6 +23,7 @@ const MobileNavItem = ({ label, href }: NavItem) => {
         _hover={{
           textDecoration: "none",
         }}
+        onClick={onClose}
       >
         <Text
           fontWeight={600}

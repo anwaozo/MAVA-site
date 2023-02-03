@@ -6,16 +6,19 @@ import {
   useDisclosure,
   HStack,
   Link,
+  Stack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { AiOutlineClose } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import DesktopNav from "./DesktopNav";
-import MobileNav from "./MobileNav";
 import MavaLogo from "../Logo";
 import NextLink from "next/link";
+import { NAV_ITEMS } from "src/data/NavItem";
+import MobileNavItem from "./MobileNavItem";
 
 const NavBar = () => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle, onClose } = useDisclosure();
   return (
     <Box
       boxShadow="sm"
@@ -74,7 +77,19 @@ const NavBar = () => {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <Stack
+          bg={" rgba(255, 255, 255, 0.25)"}
+          p={4}
+          display={{ md: "none" }}
+          onClick={onClose}
+          backdropFilter="blur(4px)"
+          webkit-backdropFilter="blur(4px)"
+          border="1px solid rgba(255, 255, 255, 0.18)"
+        >
+          {NAV_ITEMS.map((navItem) => (
+            <MobileNavItem key={navItem.label} {...navItem} />
+          ))}
+        </Stack>
       </Collapse>
     </Box>
   );

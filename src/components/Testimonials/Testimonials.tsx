@@ -1,12 +1,8 @@
-import { ReactNode } from "react";
 import {
   Box,
-  Flex,
   Heading,
-  Text,
   Stack,
   Container,
-  Avatar,
   useColorModeValue,
   SimpleGrid,
 } from "@chakra-ui/react";

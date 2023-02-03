@@ -10,11 +10,11 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "About",
-    href: "/#about",
+    href: "/about-us",
   },
   {
     label: "Instructors",
-    href: "#",
+    href: "/about-us/#instructors",
   },
   {
     label: "Gallery",

@@ -5,28 +5,34 @@ export type FaqsItem = {
 
 export const FAQS_ITEMS: FaqsItem[] = [
   {
-    question: "Can i trust mava for best photography?",
+    question: "Is the workshop Entirely Free?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod nam ornare lorem eget duis integer enim in suspendisse. Adipiscing nulla bibendum velit ut cras eu cursus massa augue. Dignissim feugiat leo integer pretium orci sed eleifend massa. Vulputate auctor risus sapien quis non eget. Blandit consectetur vulputate pretium nec ac sed. Vivamus aliquet dui sapien nibh. Sed nulla aenean neque tempus, turpis massa lorem at lorem. Aliquam et turpis dignissim at eu. Eget rhoncus, at in vitae amet ut tristique. Dis blandit volutpat libero in dolor aliquam viverra sem.",
+      "The workshop is entirely free for everyone who desires the skill but can't afford it. However, contributions may be required of you by the class representatives to carry out project work per time.",
   },
   {
-    question: "How do i apply",
+    question: "Do i Get a certificate after the training?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod nam ornare lorem eget duis integer enim in suspendisse. Adipiscing nulla bibendum velit ut cras eu cursus massa augue. Dignissim feugiat leo integer pretium orci sed eleifend massa. Vulputate auctor risus sapien quis non eget. Blandit consectetur vulputate pretium nec ac sed. Vivamus aliquet dui sapien nibh. Sed nulla aenean neque tempus, turpis massa lorem at lorem. Aliquam et turpis dignissim at eu. Eget rhoncus, at in vitae amet ut tristique. Dis blandit volutpat libero in dolor aliquam viverra sem.",
+      "On completion of the photography workshop, students who meet the requirements for certification will be certified at the stipulated cost.",
   },
   {
-    question: "Where are you located",
+    question: "Where is the location?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod nam ornare lorem eget duis integer enim in suspendisse. Adipiscing nulla bibendum velit ut cras eu cursus massa augue. Dignissim feugiat leo integer pretium orci sed eleifend massa. Vulputate auctor risus sapien quis non eget. Blandit consectetur vulputate pretium nec ac sed. Vivamus aliquet dui sapien nibh. Sed nulla aenean neque tempus, turpis massa lorem at lorem. Aliquam et turpis dignissim at eu. Eget rhoncus, at in vitae amet ut tristique. Dis blandit volutpat libero in dolor aliquam viverra sem.",
+      "The photography workshop holds at various locations each time. The workshop locations will be disclosed to registered participants.",
   },
   {
-    question: "Are there fees required?",
+    question: "What days and time does the workshop holds?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod nam ornare lorem eget duis integer enim in suspendisse. Adipiscing nulla bibendum velit ut cras eu cursus massa augue. Dignissim feugiat leo integer pretium orci sed eleifend massa. Vulputate auctor risus sapien quis non eget. Blandit consectetur vulputate pretium nec ac sed. Vivamus aliquet dui sapien nibh. Sed nulla aenean neque tempus, turpis massa lorem at lorem. Aliquam et turpis dignissim at eu. Eget rhoncus, at in vitae amet ut tristique. Dis blandit volutpat libero in dolor aliquam viverra sem.",
+      "Training days and times will be disclosed to registered participants.",
+  },
+
+  {
+    question: "Do I need to own a camera and a laptop?",
+    answer:
+      "You do not need a camera or laptop of your own to attend the workshop. However, if you have one or have access to one, come along with it.",
   },
   {
-    question: "How can i contact mava",
+    question: "Is the workshop online or offline?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod nam ornare lorem eget duis integer enim in suspendisse. Adipiscing nulla bibendum velit ut cras eu cursus massa augue. Dignissim feugiat leo integer pretium orci sed eleifend massa. Vulputate auctor risus sapien quis non eget. Blandit consectetur vulputate pretium nec ac sed. Vivamus aliquet dui sapien nibh. Sed nulla aenean neque tempus, turpis massa lorem at lorem. Aliquam et turpis dignissim at eu. Eget rhoncus, at in vitae amet ut tristique. Dis blandit volutpat libero in dolor aliquam viverra sem.",
+      "The workshop mostly holds physically at various campuses. The online lectures are on hold for now. While we put measures in place to equip you with the necessary knowledge to begin and help you grow through your journey, do exercise patience.",
   },
 ];

@@ -1,6 +1,5 @@
 import {
   Box,
-  BoxProps,
   Flex,
   Heading,
   Image,
@@ -8,11 +7,14 @@ import {
   Text,
   Button,
   VStack,
+  Link,
+  chakra,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { WORKSHOP_DATA } from "src/data/WorkshopImages";
 import React, { useRef, useEffect, useState } from "react";
-import { TestimonialContent } from "../Testimonials/TestimonialContent";
+import { BsWhatsapp } from "react-icons/bs";
+import NextLink from "next/link";
 
 const Workshop = () => {
   const [width, setWidth] = useState(0);
@@ -22,17 +24,17 @@ const Workshop = () => {
   }, []);
 
   return (
-    <Box bg="white" py="10%">
+    <chakra.section id="workshop" bg="white" py="10%">
       <Box mx={{ base: "0%", md: "20%" }}>
         <Heading
-          fontSize={{ base: "4xl", md: "4xl" }}
+          fontSize={{ base: "3xl", md: "4xl" }}
           fontWeight="bold"
           color="black"
           textAlign={"center"}
           bgGradient="linear(to-t, #94f1a5,#0c600e)"
           bgClip="text"
         >
-          Our Workshop
+          The Photography Workshop
         </Heading>
         <Flex px="20px" py="10px">
           <Text
@@ -45,7 +47,7 @@ const Workshop = () => {
             Ever had a dream to learn photography but could not afford it? Here
             is an opportunity to learn photography for free. We have
             successfully trained over a hundred people in five batches. Hop on
-            the moving train by registering with the link in the bio. 👍
+            the moving train by clicking on the Register button below. 👍{" "}
             Campuses– Fagba, Lagos. Sango Ota, Ogun State.
           </Text>
         </Flex>
@@ -60,8 +62,8 @@ const Workshop = () => {
               <Box
                 key={index}
                 flex="none"
-                h={{ base: "397px", md: "520px" }}
-                w={{ base: "295px", md: "450px" }}
+                h={{ base: "397px", md: "500px" }}
+                w={{ base: "295px", md: "400px" }}
                 borderRadius="5px"
                 zIndex={"10"}
                 mt="3rem"
@@ -83,28 +85,42 @@ const Workshop = () => {
         </Box>
         <VStack w={{ base: "full", md: "120px", lg: "full" }}>
           <Button
+            as={Link}
+            href="https://bit.ly/Fpwreg6"
             color="#fff"
             bgGradient="linear(to-l, #94f1a5, #0c600e)"
             w={{ base: "80%", lg: "50%" }}
             borderRadius="20px"
             boxShadow="md"
             my="20px"
+            _hover={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
+            _focus={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
           >
-            Apply now
+            Register Now
           </Button>
+
           <Button
+            as={Link}
+            href="https://wa.me/p/5758685420835953/2348140635143"
+            leftIcon={<BsWhatsapp />}
             color="#fff"
             bgGradient="linear(to-l, #94f1a5, #0c600e)"
-            w={{ base: "80%", lg: "50%" }}
             borderRadius="20px"
             boxShadow="md"
             my="20px"
+            w={{ base: "80%", lg: "50%" }}
+            _hover={{
+              bgGradient: "linear(to-l, #94f1a5, #0c600e)",
+              textDecoration: "none",
+            }}
+            _focus={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
           >
             Chat with Us
           </Button>
+          <Text fontWeight={"bold"}></Text>
         </VStack>
       </Box>
-    </Box>
+    </chakra.section>
   );
 };
 
