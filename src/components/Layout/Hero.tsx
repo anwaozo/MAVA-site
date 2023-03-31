@@ -15,7 +15,6 @@ import {
 
 import Socials from "../Socials";
 import { motion } from "framer-motion";
-import link from "next/link";
 
 const Hero = () => {
   return (

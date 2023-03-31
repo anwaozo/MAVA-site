@@ -14,7 +14,6 @@ import { motion } from "framer-motion";
 import { WORKSHOP_DATA } from "src/data/WorkshopImages";
 import React, { useRef, useEffect, useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
-import NextLink from "next/link";
 
 const Workshop = () => {
   const [width, setWidth] = useState(0);
@@ -83,13 +82,13 @@ const Workshop = () => {
             ))}
           </Flex>
         </Box>
-        <VStack w={{ base: "full", md: "120px", lg: "full" }}>
+        <VStack w={{ base: "full", md: "full", lg: "full" }}>
           <Button
             as={Link}
             href="https://bit.ly/Fpwreg6"
             color="#fff"
             bgGradient="linear(to-l, #94f1a5, #0c600e)"
-            w={{ base: "80%", lg: "50%" }}
+            w={{ base: "80%", md: "50%" }}
             borderRadius="20px"
             boxShadow="md"
             my="20px"
@@ -108,7 +107,7 @@ const Workshop = () => {
             borderRadius="20px"
             boxShadow="md"
             my="20px"
-            w={{ base: "80%", lg: "50%" }}
+            w={{ base: "80%", md: "50%" }}
             _hover={{
               bgGradient: "linear(to-l, #94f1a5, #0c600e)",
               textDecoration: "none",
