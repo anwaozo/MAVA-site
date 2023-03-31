@@ -19,7 +19,7 @@ export const TestimonialContent = ({ children }: { children: ReactNode }) => {
       rounded={"xl"}
       align={"center"}
       pos={"relative"}
-      w={{ base: "100%", md: "initial" }}
+      w={{ base: "350px", md: "500px" }}
       _after={{
         content: `""`,
         w: 0,
@@ -43,7 +43,7 @@ export const TestimonialContent = ({ children }: { children: ReactNode }) => {
 };
 
 export const Testimonial = ({ children }: { children: ReactNode }) => {
-  return <Box>{children}</Box>;
+  return <Box ml="2rem">{children}</Box>;
 };
 
 export const TestimonialText = ({ children }: { children: ReactNode }) => {

@@ -13,8 +13,8 @@ const InstructorsCard = ({
         <Image
           src={instructor.image}
           alt={instructor.name}
-          h={{ base: "300px", md: "500px" }}
-          w={{ base: "300px", md: "500px" }}
+          h={{ base: "200px", md: "500px" }}
+          w={{ base: "200px", md: "500px" }}
         />
       </Center>
       <Box p={{ base: 5, md: 10 }}>

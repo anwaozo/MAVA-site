@@ -4,7 +4,6 @@ import {
   Stack,
   Container,
   useColorModeValue,
-  SimpleGrid,
 } from "@chakra-ui/react";
 import Card from "./Card";
 
@@ -24,12 +23,8 @@ const Testimonials = () => {
             Hear Our Students Testify
           </Heading>
         </Stack>
-        <SimpleGrid
-          columns={{ base: 1, md: 3 }}
-          spacing={{ base: 10, md: 4, lg: 10 }}
-        >
-          <Card />
-        </SimpleGrid>
+
+        <Card />
       </Container>
     </Box>
   );
