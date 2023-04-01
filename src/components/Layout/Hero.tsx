@@ -12,9 +12,9 @@ import {
   VStack,
   Link,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 import Socials from "../Socials";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   return (

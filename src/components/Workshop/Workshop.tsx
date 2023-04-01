@@ -9,6 +9,14 @@ import {
   VStack,
   Link,
   chakra,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+  color,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { WORKSHOP_DATA } from "src/data/WorkshopImages";
@@ -21,6 +29,7 @@ const Workshop = () => {
   useEffect(() => {
     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
   }, []);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <chakra.section id="workshop" bg="white" py="10%">
@@ -84,14 +93,13 @@ const Workshop = () => {
         </Box>
         <VStack w={{ base: "full", md: "full", lg: "full" }}>
           <Button
-            as={Link}
-            href="https://bit.ly/Fpwreg6"
             color="#fff"
             bgGradient="linear(to-l, #94f1a5, #0c600e)"
             w={{ base: "80%", md: "50%" }}
             borderRadius="20px"
             boxShadow="md"
             my="20px"
+            onClick={onOpen}
             _hover={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
             _focus={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
           >
@@ -118,6 +126,39 @@ const Workshop = () => {
           </Button>
           <Text fontWeight={"bold"}></Text>
         </VStack>
+        <Modal isOpen={isOpen} onClose={onClose} isCentered>
+          <ModalOverlay />
+          <ModalContent
+            bgGradient="linear(to-l, #94f1a5, #0c600e)"
+            borderRadius="10px"
+            boxShadow="md"
+            p={{ base: "20px", md: "30px" }}
+            m={{ base: "20px" }}
+          >
+            <ModalHeader
+              textAlign="center"
+              fontSize={{ base: "3xl", md: "4xl" }}
+              fontWeight="bold"
+              bgGradient="linear(to-t, red,#fff)"
+              bgClip="text"
+            >
+              Not Available
+            </ModalHeader>
+            <ModalBody>
+              <VStack spacing={4} textAlign="center">
+                <p style={{ fontSize: "18px", color: "white" }}>
+                  Sorry, the photography workshop is not available now.
+                </p>
+                <p style={{ fontSize: "18px", color: "white" }}>
+                  Please check back later for updates.
+                </p>
+              </VStack>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Box>
     </chakra.section>
   );

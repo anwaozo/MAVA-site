@@ -22,6 +22,7 @@ const Card = () => {
           as={motion.div}
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
+          ml="-3rem"
         >
           {CARD_DATA.map((data, index) => (
             <Testimonial key={index}>

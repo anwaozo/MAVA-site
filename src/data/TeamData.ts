@@ -25,3 +25,17 @@ export const INSTRUCTORS_DATA = [
     bio: "Temiloluwa Johnson is one with many colors and many boots; she is a creative photographer and writer- but Temi is first a storyteller. She gets inspired by everything and anything. She believes plantain and love makes the world a better place. Temiloluwa is a lover of black clothings and the author of Detrimental tales at 19.",
   },
 ];
+export const TUTORS_DATA = [
+  {
+    name: "John Oyewale",
+    image: "/team/John Oyewale.jpg",
+  },
+  {
+    name: "Noah Olaonipekun",
+    image: "/team/Noah Olaonipekun.jpg",
+  },
+  {
+    name: "Enoch Olaonipekun",
+    image: "/team/Enoch Olaonipekun.jpg",
+  },
+];

@@ -1,5 +1,13 @@
-import { Box, Image, Text, chakra, SimpleGrid, Center } from "@chakra-ui/react";
-import React from "react";
+import { useState } from "react";
+import {
+  Box,
+  Image,
+  Text,
+  chakra,
+  SimpleGrid,
+  Center,
+  Button,
+} from "@chakra-ui/react";
 import { INSTRUCTORS_DATA } from "src/data/TeamData";
 
 const InstructorsCard = ({
@@ -7,14 +15,21 @@ const InstructorsCard = ({
 }: {
   instructor: typeof INSTRUCTORS_DATA[0];
 }) => {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <Box maxW="xl" bg="white" rounded={"md"} overflow={"hidden"}>
       <Center>
         <Image
           src={instructor.image}
           alt={instructor.name}
-          h={{ base: "200px", md: "500px" }}
-          w={{ base: "200px", md: "500px" }}
+          h={{ base: "300px", md: "550px" }}
+          w={{ base: "200px", md: "400px" }}
+          objectFit="cover" // stretch the image to fill the container without distorting aspect ratio
         />
       </Center>
       <Box p={{ base: 5, md: 10 }}>
@@ -30,13 +45,30 @@ const InstructorsCard = ({
         <Box
           display="flex"
           my="2"
-          alignItems="center"
-          textAlign={{ base: "center", md: "inherit" }}
+          flexDirection="column"
+          alignItems={{ base: "center", md: "inherit" }}
+          textAlign="center"
         >
-          <Text color="primary" fontSize={{ base: "sm", md: "md" }}>
+          <Text
+            color="primary"
+            fontSize={{ base: "sm", md: "md" }}
+            textAlign="justify"
+            maxH={showMore ? "none" : "6rem"}
+            overflow="hidden"
+          >
             {instructor.bio}
           </Text>
         </Box>
+        <Center>
+          <Button
+            size="xs"
+            variant="outline"
+            color="primary"
+            onClick={toggleShowMore}
+          >
+            {showMore ? "Read less" : "Read more"}
+          </Button>
+        </Center>
       </Box>
     </Box>
   );
@@ -50,7 +82,8 @@ const Instructors = () => {
         fontWeight="bold"
         bgGradient="linear(to-t, #94f1a5,#0c600e)"
         bgClip="text"
-        mt="5rem"
+        mt="2rem"
+        textAlign={"center"}
       >
         Instructors
       </Text>{" "}

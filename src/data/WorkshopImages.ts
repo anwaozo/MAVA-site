@@ -10,8 +10,9 @@ export const WORKSHOP_DATA: WorkshopType[] = [
     img: "/workshop/image2.jpg",
   },
   {
-    img: "/workshop/image3.jpg",
+    img: "/workshop/image7.jpg",
   },
+
   {
     img: "/workshop/image4.jpg",
   },
@@ -21,7 +22,8 @@ export const WORKSHOP_DATA: WorkshopType[] = [
   {
     img: "/workshop/image6.jpg",
   },
+
   {
-    img: "/workshop/image7.jpg",
+    img: "/workshop/image3.jpg",
   },
 ];

@@ -20,7 +20,7 @@ const Testimonials = () => {
             bgGradient="linear(to-t, #94f1a5,#0c600e)"
             bgClip="text"
           >
-            Hear Our Students Testify
+            Students Testimony
           </Heading>
         </Stack>
 

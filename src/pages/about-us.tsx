@@ -9,21 +9,26 @@ import {
   useColorModeValue,
   Heading,
   Center,
+  Button,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { TEAM_DATA } from "src/data/TeamData";
 
 import Instructors from "src/components/Instructors";
+import Tutors from "src/components/Tutors";
 
 const TeamCard = ({ team }: { team: typeof TEAM_DATA[0] }) => {
+  const [showBio, setShowBio] = useState(false);
+
   return (
     <Box maxW="xl" bg="white" rounded={"md"} overflow={"hidden"}>
       <Center>
         <Image
           src={team.image}
           alt={team.name}
-          h={{ base: "300px", md: "500px" }}
-          w={{ base: "300px", md: "500px" }}
+          h={{ base: "300px", md: "550px" }}
+          w={{ base: "200px", md: "400px" }}
+          objectFit="cover" // stretch the image to fill the container without distorting aspect ratio
         />
       </Center>
       <Box p={{ base: 5, md: 10 }}>
@@ -39,12 +44,44 @@ const TeamCard = ({ team }: { team: typeof TEAM_DATA[0] }) => {
         <Box
           display="flex"
           my="2"
-          alignItems="center"
-          textAlign={{ base: "center", md: "inherit" }}
+          flexDirection="column"
+          alignItems={{ base: "center", md: "inherit" }}
         >
-          <Text color="primary" fontSize={{ base: "sm", md: "md" }}>
+          <Text
+            color="primary"
+            fontSize={{ base: "sm", md: "md" }}
+            maxH={!showBio ? "3.6rem" : "none"}
+            overflow="hidden"
+            textAlign="justify"
+          >
             {team.bio}
           </Text>
+          {!showBio && (
+            <>
+              <br />
+              <Button
+                size="xs"
+                variant="outline"
+                onClick={() => setShowBio(true)}
+                display="block"
+              >
+                Read More
+              </Button>
+            </>
+          )}
+          {showBio && (
+            <>
+              <br />
+              <Button
+                size="xs"
+                variant="outline"
+                onClick={() => setShowBio(false)}
+                display="block"
+              >
+                Read Less
+              </Button>
+            </>
+          )}
         </Box>
       </Box>
     </Box>
@@ -87,8 +124,7 @@ const AboutUsPage = () => {
           >
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
             quo, et sint harum vero culpa. Fugiat officia quia magni omnis iste
-            tempore odio architecto, facere minima, id, optio ipsa
-            reprehenderit.
+            tempore odio architecto, facere
           </Text>
         </VStack>
       </Box>
@@ -122,6 +158,7 @@ const AboutUsPage = () => {
           </SimpleGrid>
         </Box>
         <Instructors />
+        <Tutors />
       </Container>
     </Box>
   );

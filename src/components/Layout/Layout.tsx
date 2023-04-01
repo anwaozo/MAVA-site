@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../NavBar/Navbar";
 import Footer from "./Footer/Footer";
@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Stack>
       <Navbar />
-      {children}
+      <Box>{children}</Box>
       <Footer />
     </Stack>
   );

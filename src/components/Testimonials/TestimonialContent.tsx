@@ -15,11 +15,11 @@ export const TestimonialContent = ({ children }: { children: ReactNode }) => {
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       boxShadow={"lg"}
-      p={8}
+      p={6}
       rounded={"xl"}
       align={"center"}
       pos={"relative"}
-      w={{ base: "350px", md: "500px" }}
+      w={{ base: "400px", md: "500px" }}
       _after={{
         content: `""`,
         w: 0,
