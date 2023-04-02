@@ -9,8 +9,7 @@ import React from "react";
 
 const readMore = () => {
   return (
-    <div>
-      {" "}
+    <>
       <Box
         w="full"
         backgroundImage="url('./static/MAVA-Wills-BG.jpg')"
@@ -66,7 +65,7 @@ const readMore = () => {
           </Text>
         </VStack>
       </Box>
-    </div>
+    </>
   );
 };
 
