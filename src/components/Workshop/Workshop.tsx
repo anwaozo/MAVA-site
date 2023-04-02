@@ -22,13 +22,24 @@ import { motion } from "framer-motion";
 import { WORKSHOP_DATA } from "src/data/WorkshopImages";
 import React, { useRef, useEffect, useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
+import useInterval from "use-interval";
 
 const Workshop = () => {
   const [width, setWidth] = useState(0);
   const carousel = useRef<HTMLDivElement>(null!);
+  const [scrollPosition, setScrollPosition] = useState(0); // keep track of the current scroll position
+
   useEffect(() => {
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+    setWidth(
+      carousel.current?.scrollWidth - carousel.current?.offsetWidth || 0
+    );
   }, []);
+
+  // useInterval hook to update the scroll position every 10 milliseconds
+  useInterval(() => {
+    setScrollPosition((scrollPosition + 1) % width);
+  }, 10);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -42,7 +53,7 @@ const Workshop = () => {
           bgGradient="linear(to-t, #94f1a5,#0c600e)"
           bgClip="text"
         >
-          The Photography Workshop
+          Visual Skills
         </Heading>
         <Flex px="20px" py="10px">
           <Text
@@ -52,11 +63,36 @@ const Workshop = () => {
             color={useColorModeValue("gray.600", "gray.400")}
             fontWeight="bold"
           >
-            Ever had a dream to learn photography but could not afford it? Here
-            is an opportunity to learn photography for free. We have
-            successfully trained over a hundred people in five batches. Hop on
-            the moving train by clicking on the Register button below. 👍{" "}
-            Campuses– Fagba, Lagos. Sango Ota, Ogun State.
+            Ever had a dream to learn visual skills such as cinematography and
+            photography but can not afford it? MAVA offers opportunities to
+            learn for free.
+            <Text
+              mt="1rem"
+              fontWeight="bold"
+              fontSize={{ base: "lg", md: "lg" }}
+            >
+              Register below&nbsp;
+            </Text>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              style={{ display: "inline-block" }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                width="2.5rem"
+                height="2.5rem"
+                style={{ marginLeft: "0.5rem" }}
+              >
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+            </motion.div>
           </Text>
         </Flex>
 
@@ -65,6 +101,9 @@ const Workshop = () => {
             as={motion.div}
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
+            style={{ transform: `translateX(-${scrollPosition}px)` }} // update the position of the carousel
+            dragElastic={0.8}
+            dragMomentum={true}
           >
             {WORKSHOP_DATA.map((image, index) => (
               <Box
@@ -91,6 +130,7 @@ const Workshop = () => {
             ))}
           </Flex>
         </Box>
+
         <VStack w={{ base: "full", md: "full", lg: "full" }}>
           <Button
             color="#fff"
@@ -105,10 +145,9 @@ const Workshop = () => {
           >
             Register Now
           </Button>
-
           <Button
             as={Link}
-            href="https://wa.me/p/5758685420835953/2348140635143"
+            href="https://wa.me/message/G2VVPCEPV2NUE1"
             leftIcon={<BsWhatsapp />}
             color="#fff"
             bgGradient="linear(to-l, #94f1a5, #0c600e)"
@@ -147,10 +186,10 @@ const Workshop = () => {
             <ModalBody>
               <VStack spacing={4} textAlign="center">
                 <p style={{ fontSize: "18px", color: "white" }}>
-                  Sorry, the photography workshop is not available now.
-                </p>
-                <p style={{ fontSize: "18px", color: "white" }}>
-                  Please check back later for updates.
+                  The Free Photography Workshop is currently not in session.
+                  Follow our social media handles for more updates on the next
+                  Free Photography Workshop or chat with us on WhatsApp for our
+                  private classes.
                 </p>
               </VStack>
             </ModalBody>

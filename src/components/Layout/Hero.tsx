@@ -89,6 +89,8 @@ const Hero = () => {
                 Apply now
               </Button>
               <Button
+                as={Link}
+                href="/read-more"
                 variant="outline"
                 w={{ base: "150px", md: "120px", lg: "150px" }}
                 bg="transparent"

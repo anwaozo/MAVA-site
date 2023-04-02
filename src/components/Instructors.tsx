@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  Box,
-  Image,
-  Text,
-  chakra,
-  SimpleGrid,
-  Center,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Image, Text, chakra, SimpleGrid, Center } from "@chakra-ui/react";
 import { INSTRUCTORS_DATA } from "src/data/TeamData";
 
 const InstructorsCard = ({
@@ -15,12 +7,6 @@ const InstructorsCard = ({
 }: {
   instructor: typeof INSTRUCTORS_DATA[0];
 }) => {
-  const [showMore, setShowMore] = useState(false);
-
-  const toggleShowMore = () => {
-    setShowMore(!showMore);
-  };
-
   return (
     <Box maxW="xl" bg="white" rounded={"md"} overflow={"hidden"}>
       <Center>
@@ -37,38 +23,10 @@ const InstructorsCard = ({
           fontWeight="bolder"
           fontSize="xl"
           color="primary"
-          textAlign={{ base: "center", md: "inherit" }}
+          textAlign={{ base: "center", md: "center" }}
         >
           {instructor.name}
         </Text>
-
-        <Box
-          display="flex"
-          my="2"
-          flexDirection="column"
-          alignItems={{ base: "center", md: "inherit" }}
-          textAlign="center"
-        >
-          <Text
-            color="primary"
-            fontSize={{ base: "sm", md: "md" }}
-            textAlign="justify"
-            maxH={showMore ? "none" : "6rem"}
-            overflow="hidden"
-          >
-            {instructor.bio}
-          </Text>
-        </Box>
-        <Center>
-          <Button
-            size="xs"
-            variant="outline"
-            color="primary"
-            onClick={toggleShowMore}
-          >
-            {showMore ? "Read less" : "Read more"}
-          </Button>
-        </Center>
       </Box>
     </Box>
   );

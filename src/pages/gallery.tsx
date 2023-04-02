@@ -77,7 +77,6 @@ const Gallery: React.FC = () => {
           ))}
         </Grid>
       </ButtonGroup>
-
       <Grid
         templateColumns="repeat(3, 1fr)"
         gap={{ base: 1, md: 4 }}
@@ -100,7 +99,6 @@ const Gallery: React.FC = () => {
           </GridItem>
         ))}
       </Grid>
-
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} isCentered>
         <ModalOverlay />
         <ModalContent>
@@ -109,8 +107,6 @@ const Gallery: React.FC = () => {
             <Image
               src={selectedImage}
               alt="Selected Image"
-              w="100%"
-              h="500px" // set a fixed height for the modal image
               objectFit="cover" // stretch the image to fill the container without distorting aspect ratio
             />
           </ModalBody>

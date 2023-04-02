@@ -36,7 +36,7 @@ const TeamCard = ({ team }: { team: typeof TEAM_DATA[0] }) => {
           fontWeight="bolder"
           fontSize="xl"
           color="primary"
-          textAlign={{ base: "center", md: "inherit" }}
+          textAlign={{ base: "center", md: "center" }}
         >
           {team.name}
         </Text>
@@ -115,16 +115,35 @@ const AboutUsPage = () => {
             alignItems="center"
             pt={{ base: "0rem", md: "2rem" }}
           >
-            History of Motive Africa Visual Academy
+            History of MAVA
           </Heading>
           <Text
             fontSize={{ base: "sm", md: "md" }}
             mt={10}
             color={useColorModeValue("gray.600", "gray.400")}
+            overflow="hidden"
+            textAlign="justify"
           >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            quo, et sint harum vero culpa. Fugiat officia quia magni omnis iste
-            tempore odio architecto, facere
+            About 70% of the Youth in Africa lack access to learn visual skills
+            such as photography and cinematography. This means that 7 out of 10
+            people cannot afford to learn due to the high and unaffordable
+            learning cost.
+            <br />
+            <br /> In 2020 we identified this problem and have experienced it
+            ourselves, we set out with a team of volunteers to solve this
+            problem of inability to afford the cost of acquiring visual skills
+            by organising free photography workshops to help passionate
+            individuals learn.
+            <br /> On the 18th of January 2021, the first batch of the Free
+            Photography Workshop commenced. In two years we have trained over a
+            hundred people and a handful of them who are practising have a
+            better livelihood. <br />
+            <br />
+            Everyone deserves equal access to opportunities irrespective of
+            their backgrounds, races and religious belief. and lack of resources
+            should not hinder anyone from acquiring visual skills.
+            <br /> Motive Africa Visual Academy helps individuals who can't
+            afford visual skills learn.
           </Text>
         </VStack>
       </Box>
@@ -140,14 +159,16 @@ const AboutUsPage = () => {
             Our Team{" "}
           </Heading>
           <Text
-            fontSize="md"
-            textAlign="center"
-            pt={4}
-            maxW={{ base: "80%", md: "60%" }}
+            fontSize={{ base: "sm", md: "md" }}
+            mt={10}
             color={useColorModeValue("gray.600", "gray.400")}
+            overflow="hidden"
+            textAlign="center"
           >
-            We are made up of a team that that is after a particular goal, which
-            is to provide free impact of photography to our students.
+            Our team consist of experienced tutors who have visual skills and
+            train the students three times a week within the space of two
+            months. We also have volunteers who support the organization to
+            actualize the vision.
           </Text>
         </Stack>
         <Box my={10}>

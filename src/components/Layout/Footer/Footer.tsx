@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Socials from "src/components/Socials";
 import { MavaLogoB } from "src/components/Logo";
-import { FOOTER_DATA, OTHER_FOOTER_LINKS } from "src/data/FooterData";
+import { FOOTER_DATA } from "src/data/FooterData";
 import { useRouter } from "next/router";
 
 const Footer = () => {
@@ -62,24 +62,9 @@ const Footer = () => {
             columns={{ base: 1, md: 2 }}
           >
             <Stack align={{ base: "center", md: "flex-start" }} flex="1">
-              <Text fontSize="sm">© COPYRIGHT INTENT TECHNOLOGIES LTD</Text>
-            </Stack>
-            <Stack
-              spacing="4"
-              direction="row"
-              justify={{ base: "center", md: "flex-end" }}
-            >
-              {OTHER_FOOTER_LINKS.map((link, index) => (
-                <Link color="primary" key={link.id} href={link.href}>
-                  <Text
-                    color="#fff"
-                    fontSize="sm"
-                    textAlign={{ base: "center", md: "start" }}
-                  >
-                    {link.title}
-                  </Text>
-                </Link>
-              ))}
+              <Text fontSize="sm">
+                © COPYRIGHT MOTIVE AFRICA VISUAL ACADEMY
+              </Text>
             </Stack>
           </SimpleGrid>
         </Stack>

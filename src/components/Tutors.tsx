@@ -27,7 +27,7 @@ const TutorCard = ({ tutor }: { tutor: typeof TUTORS_DATA[0] }) => {
           fontWeight="bolder"
           fontSize="xl"
           color="primary"
-          textAlign={{ base: "center", md: "inherit" }}
+          textAlign={{ base: "center", md: "center" }}
         >
           {tutor.name}
         </Text>
@@ -45,7 +45,7 @@ const Tutors = () => {
         bgGradient="linear(to-t, #94f1a5,#0c600e)"
         bgClip="text"
         mt="2rem"
-        textAlign={"center"}
+        textAlign={{ base: "center", md: "center" }}
       >
         Tutors
       </Text>{" "}

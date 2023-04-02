@@ -8,13 +8,24 @@ import {
   TestimonialText,
 } from "./TestimonialContent";
 import { motion } from "framer-motion";
+import useInterval from "use-interval";
 
 const Card = () => {
   const [width, setWidth] = useState(0);
   const carousel = useRef<HTMLDivElement>(null!);
+  const [scrollPosition, setScrollPosition] = useState(0); // keep track of the current scroll position
+
   useEffect(() => {
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+    setWidth(
+      carousel.current?.scrollWidth - carousel.current?.offsetWidth || 0
+    );
   }, []);
+
+  // useInterval hook to update the scroll position every 10 milliseconds
+  useInterval(() => {
+    setScrollPosition((scrollPosition + 1) % width);
+  }, 10);
+
   return (
     <>
       <Box as={motion.div} ref={carousel} cursor="grab" overflow={"hidden"}>
@@ -23,6 +34,9 @@ const Card = () => {
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
           ml="-3rem"
+          style={{ transform: `translateX(-${scrollPosition}px)` }} // update the position of the carousel
+          dragElastic={0.8}
+          dragMomentum={true}
         >
           {CARD_DATA.map((data, index) => (
             <Testimonial key={index}>

@@ -27,21 +27,3 @@ export const FOOTER_DATA: FooterLinksType[] = [
     href: "",
   },
 ];
-
-export const OTHER_FOOTER_LINKS: FooterLinksType[] = [
-  {
-    id: 1,
-    title: "Security",
-    href: "#",
-  },
-  {
-    id: 2,
-    title: "Terms",
-    href: "#",
-  },
-  {
-    id: 3,
-    title: "Privacy",
-    href: "#",
-  },
-];
