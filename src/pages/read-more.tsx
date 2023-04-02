@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const readMore = () => {
+const ReadMore = () => {
   return (
     <>
       <Box
@@ -69,4 +69,4 @@ const readMore = () => {
   );
 };
 
-export default readMore;
+export default ReadMore;
