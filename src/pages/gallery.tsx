@@ -107,7 +107,7 @@ const Gallery: React.FC = () => {
             <Image
               src={selectedImage}
               alt="Selected Image"
-              objectFit="cover" // stretch the image to fill the container without distorting aspect ratio
+              objectFit="cover" 
             />
           </ModalBody>
         </ModalContent>
