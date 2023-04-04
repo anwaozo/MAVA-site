@@ -10,7 +10,7 @@ import Card from "./Card";
 const Testimonials = () => {
   return (
     <Box bg={useColorModeValue("gray.100", "gray.700")}>
-      <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
+      <Container maxW={"7xl"} py={16} as={Stack} spacing={12} px={0}>
         <Stack spacing={0} align={"center"}>
           <Heading
             fontSize={{ base: "3xl", md: "4xl" }}
