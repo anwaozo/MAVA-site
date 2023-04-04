@@ -17,15 +17,11 @@ export const INSTRUCTORS_DATA = [
   {
     name: "Oluyinka Olasubomi Rachael",
     image: "/team/instructor 1.jpg",
-    bio: "Oluyinka Olasubomi Rachael is a professional model at Motive Africa and the co-Lead at Zeroex Modelling Agency, a modelling agency that gets models off the street with zero experience transforming them morally, giving them an upright knowledge and developing their skills in the modelling industry  She has also worked with varieties of creative designers, photographers and brands across various fields.Olasubomi Oluyinka is also a brand and content marketer passionate about helping brands create valuable and relatable content to promote sales and engagement using various means and mediums. Olasubomi is a Christian with a strong passion for God and also a lover of the things of God. She loves to network with people especially creatives across various fields. She believes greatness can be found in the most common of things.",
   },
   {
     name: "Temiloluwa Johnson",
     image: "/team/instructor 2.jpg",
-    bio: "Temiloluwa Johnson is one with many colors and many boots; she is a creative photographer and writer- but Temi is first a storyteller. She gets inspired by everything and anything. She believes plantain and love makes the world a better place. Temiloluwa is a lover of black clothings and the author of Detrimental tales at 19.",
   },
-];
-export const TUTORS_DATA = [
   {
     name: "John Oyewale",
     image: "/team/John Oyewale.jpg",

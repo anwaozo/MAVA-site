@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { Box, Image, Text, chakra, SimpleGrid, Center } from "@chakra-ui/react";
 import { INSTRUCTORS_DATA } from "src/data/TeamData";
 

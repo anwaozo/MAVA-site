@@ -107,7 +107,9 @@ const Gallery: React.FC = () => {
             <Image
               src={selectedImage}
               alt="Selected Image"
-              objectFit="cover" 
+              w="100%"
+              h="500px" // set a fixed height for the modal image
+              objectFit="cover" // stretch the image to fill the container without distorting aspect ratio
             />
           </ModalBody>
         </ModalContent>
