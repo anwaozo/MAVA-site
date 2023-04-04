@@ -15,7 +15,6 @@ import React, { useState } from "react";
 import { TEAM_DATA } from "src/data/TeamData";
 
 import Instructors from "src/components/Instructors";
-import Tutors from "src/components/Tutors";
 
 const TeamCard = ({ team }: { team: typeof TEAM_DATA[0] }) => {
   const [showBio, setShowBio] = useState(false);
@@ -179,7 +178,6 @@ const AboutUsPage = () => {
           </SimpleGrid>
         </Box>
         <Instructors />
-        <Tutors />
       </Container>
     </Box>
   );
