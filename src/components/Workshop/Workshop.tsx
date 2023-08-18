@@ -26,19 +26,19 @@ import useInterval from "use-interval";
 
 const Workshop = () => {
   const [width, setWidth] = useState(0);
-  const carousel = useRef<HTMLDivElement>(null!);
-  const [scrollPosition, setScrollPosition] = useState(0); // keep track of the current scroll position
+  // const carousel = useRef<HTMLDivElement>(null!);
+  // const [scrollPosition, setScrollPosition] = useState(0); // keep track of the current scroll position
 
-  useEffect(() => {
-    setWidth(
-      carousel.current?.scrollWidth - carousel.current?.offsetWidth || 0
-    );
-  }, []);
+  // useEffect(() => {
+  //   setWidth(
+  //     carousel.current?.scrollWidth - carousel.current?.offsetWidth || 0
+  //   );
+  // }, []);
 
-  // useInterval hook to update the scroll position every 10 milliseconds
-  useInterval(() => {
-    setScrollPosition((scrollPosition + 1) % width);
-  }, 10);
+  // // useInterval hook to update the scroll position every 10 milliseconds
+  // useInterval(() => {
+  //   setScrollPosition((scrollPosition + 1) % width);
+  // }, 10);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -55,7 +55,13 @@ const Workshop = () => {
         >
           Visual Skills
         </Heading>
-        <Flex px="20px" py="10px">
+        <Flex
+          px="20px"
+          py="10px"
+          flexDirection={"column"}
+          alignItems="center"
+          justifyContent={"center"}
+        >
           <Text
             fontSize={{ base: "md", md: "lg" }}
             lineHeight={{ md: "8" }}
@@ -63,9 +69,10 @@ const Workshop = () => {
             color={useColorModeValue("gray.600", "gray.400")}
             fontWeight="bold"
           >
-            Ever had a dream to learn visual skills such as cinematography and
-            photography but can not afford it? MAVA offers opportunities to
-            learn for free.
+            We are delighted to announce that registration for the 7th cohort of
+            the Free Photography Workshop by MAVA commences today. We are
+            committed to bridging the gap and helping individuals who can't
+            afford visual skills acquire them.
             <Text
               mt="1rem"
               fontWeight="bold"
@@ -96,7 +103,7 @@ const Workshop = () => {
           </Text>
         </Flex>
 
-        <Box as={motion.div} ref={carousel} cursor="grab" overflow={"hidden"}>
+        {/* <Box as={motion.div} ref={carousel} cursor="grab" overflow={"hidden"}>
           <Flex
             as={motion.div}
             drag="x"
@@ -129,19 +136,31 @@ const Workshop = () => {
               </Box>
             ))}
           </Flex>
-        </Box>
+        </Box> */}
+        <Flex alignItems={"center"} justifyContent="center">
+          <Image
+            src="/static/photography image.jpg"
+            w={{ base: "350px", xl: "450px" }}
+          />
+        </Flex>
 
         <VStack w={{ base: "full", md: "full", lg: "full" }}>
           <Button
+            as={Link}
+            href="http://www.linktr.ee/exploremava"
             color="#fff"
             bgGradient="linear(to-l, #94f1a5, #0c600e)"
             w={{ base: "80%", md: "50%" }}
             borderRadius="20px"
             boxShadow="md"
             my="20px"
-            onClick={onOpen}
-            _hover={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
+            // onClick={onOpen}
+
             _focus={{ bgGradient: "linear(to-l, #94f1a5, #0c600e)" }}
+            _hover={{
+              bgGradient: "linear(to-l, #94f1a5, #0c600e)",
+              textDecoration: "none",
+            }}
           >
             Register Now
           </Button>
