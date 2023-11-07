@@ -16,7 +16,7 @@ const HomePage = () => {
       <Hero />
       <AboutUs />
       <Testimonials />
-      <Workshop />
+      {/* <Workshop /> */}
       <Faqs />
     </Box>
   );
