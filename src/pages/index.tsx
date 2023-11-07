@@ -4,7 +4,6 @@ import AboutUs from "src/components/Our Story";
 import Faqs from "src/components/Faqs/faq";
 import Hero from "src/components/Layout/Hero";
 import Testimonials from "src/components/Testimonials/Testimonials";
-import Workshop from "src/components/Workshop/Workshop";
 import Head from "next/head";
 
 const HomePage = () => {
