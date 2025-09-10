@@ -1,4 +1,4 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import AboutUs from "src/components/Our Story";
 import Faqs from "src/components/Faqs/faq";
