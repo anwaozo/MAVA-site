@@ -1,0 +1,9 @@
+.swipeable {
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.swipeable:active {
+  cursor: grabbing;
+}

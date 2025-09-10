@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Galindo&family=Manrope:wght@200;300;400;500;600;700;800&family=Niconne&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  /* Font family definitions */
+  --font-manrope: "Manrope", sans-serif;
+  --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-urbanist: "Urbanist", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-galindo: "Galindo", cursive;
+  --font-niconne: "Niconne", cursive;
+}
+
+@keyframes seamlessMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-25%)
+    ); /* Only move 1/4 of the way since we have 4 sets */
+  }
+}
+
+@layer utilities {
+  .animate-seamless-marquee {
+    animation: seamlessMarquee 30s linear infinite;
+    width: max-content;
+    display: flex;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .text-primary {
+    @apply text-[#034833];
+  }
+  .text-secondary {
+    @apply text-[#727272];
+  }
+}
+
+/* Custom font classes */
+.font-manrope {
+  font-family: "Manrope", sans-serif !important;
+}
+
+.font-jakarta,
+.font-plusJakarta {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+.font-urbanist {
+  font-family: "Urbanist", sans-serif !important;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.font-galindo {
+  font-family: "Galindo", cursive !important;
+}
+.font-niconne {
+  font-family: "Niconne", cursive !important;
+}
+
+/* Testimonial Text Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.opacity-animation {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Hidden state before animation starts */
+.pre-animation {
+  opacity: 0;
+}
+
+.gradient-top-border {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #75ff8c, transparent);
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.service-1 {
+  top: -5%;
+  right: 60%;
+}
+.service-2 {
+  top: -5%;
+  right: -2%;
+}
+.service-3 {
+  bottom: 18%;
+  right: 60%;
+}
+.service-4 {
+  bottom: 0%;
+  right: 35%;
+}
+.service-5 {
+  bottom: 28%;
+  left: 60%;
+}
+
+@media (min-width: 375px) {
+  .service-1 {
+    top: -5%;
+    right: 60%;
+  }
+  .service-2 {
+    top: -5%;
+    right: -4%;
+  }
+  .service-3 {
+    bottom: 8%;
+    right: 68%;
+  }
+  .service-4 {
+    bottom: 0%;
+    right: 35%;
+  }
+  .service-5 {
+    bottom: 8%;
+    left: 72%;
+  }
+}
+
+@media (min-width: 500px) {
+  .service-1 {
+    top: -5%;
+    right: 60%;
+  }
+  .service-2 {
+    top: -5%;
+    right: 0%;
+  }
+  .service-3 {
+    bottom: 8%;
+    left: 0%;
+  }
+  .service-4 {
+    bottom: 0%;
+    right: 35%;
+  }
+  .service-5 {
+    bottom: 8%;
+    left: 85%;
+  }
+}
+
+@media (min-width: 1224px) {
+  .service-1 {
+    top: -5%;
+    right: 60%;
+  }
+  .service-2 {
+    top: -5%;
+    right: -8%;
+  }
+  .service-3 {
+    bottom: 8%;
+    right: 90%;
+  }
+  .service-4 {
+    bottom: 0%;
+    right: 35%;
+  }
+  .service-5 {
+    bottom: 8%;
+    left: 90%;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
