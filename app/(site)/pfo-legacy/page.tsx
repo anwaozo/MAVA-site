@@ -2,14 +2,10 @@ import React from "react";
 import ReusableHero from "../components/reusable-hero";
 import NotesFromLovers from "../components/notes-from-lovers";
 import Legacy from "../components/legacy";
-import {
-  getLegacyContent,
-  getNotesFromLoversContent,
-  getPageSeo,
-} from "@/sanity/sanity-utils";
+import { getLegacyPageContent, getLegacySeo } from "@/sanity/lib/sanity-utils";
 
 export const generateMetadata = async () => {
-  const pfoLegacySeo = await getPageSeo("pfoLegacy");
+  const pfoLegacySeo = await getLegacySeo();
   return {
     title: pfoLegacySeo.title,
     description: pfoLegacySeo.description,
@@ -17,10 +13,11 @@ export const generateMetadata = async () => {
 };
 
 const page = async () => {
-  const legacyData = await getLegacyContent();
-  const notesFromLovers = await getNotesFromLoversContent();
+  const legacyPageData = await getLegacyPageContent();
+  const legacyData = legacyPageData.legacySlides;
+  const notesFromLovers = legacyPageData.notesFromLovers;
 
-  // console.log(notesFromLovers);
+  console.log(legacyData);
 
   return (
     <div className="overflow-x-hidden">
@@ -28,10 +25,8 @@ const page = async () => {
         title={"PFO's Legacy"}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "PFO's Legacy" }]}
       />
-      <Legacy legacyData={legacyData.legacy} />
-      <NotesFromLovers
-        notesFromLovers={notesFromLovers.notesFromLovers.notes}
-      />
+      <Legacy legacyData={legacyData} />
+      <NotesFromLovers notesFromLovers={notesFromLovers} />
     </div>
   );
 };

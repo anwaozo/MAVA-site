@@ -4,7 +4,7 @@ import Image from "next/image";
 const BrandsSection = ({
   brandImages,
 }: {
-  brandImages: Array<{ src: string; alt: string }>;
+  brandImages: Array<{ image: string; alt: string; _id: string }>;
 }) => {
   return (
     <section className="py-4 lg:py-8">
@@ -19,10 +19,10 @@ const BrandsSection = ({
 
           <div className="flex gap-3 lg:gap-2 items-center animate-seamless-marquee">
             {/* First set */}
-            {brandImages?.map((brand, index) => (
-              <div key={`set1-${index}`} className="flex-shrink-0">
+            {brandImages?.map((brand) => (
+              <div key={brand._id} className="flex-shrink-0">
                 <Image
-                  src={brand.src}
+                  src={brand.image}
                   alt={brand.alt}
                   width={180}
                   height={80}
@@ -31,10 +31,10 @@ const BrandsSection = ({
             ))}
 
             {/* Second set */}
-            {brandImages?.map((brand, index) => (
-              <div key={`set2-${index}`} className="flex-shrink-0">
+            {brandImages?.map((brand) => (
+              <div key={brand._id} className="flex-shrink-0">
                 <Image
-                  src={brand.src}
+                  src={brand.image}
                   alt={brand.alt}
                   width={180}
                   height={80}
@@ -43,10 +43,10 @@ const BrandsSection = ({
             ))}
 
             {/* Third set */}
-            {brandImages?.map((brand, index) => (
-              <div key={`set3-${index}`} className="flex-shrink-0">
+            {brandImages?.map((brand) => (
+              <div key={brand._id} className="flex-shrink-0">
                 <Image
-                  src={brand.src}
+                  src={brand.image}
                   alt={brand.alt}
                   width={180}
                   height={80}
@@ -55,10 +55,10 @@ const BrandsSection = ({
             ))}
 
             {/* Fourth set */}
-            {brandImages?.map((brand, index) => (
-              <div key={`set4-${index}`} className="flex-shrink-0">
+            {brandImages?.map((brand) => (
+              <div key={brand._id} className="flex-shrink-0">
                 <Image
-                  src={brand.src}
+                  src={brand.image}
                   alt={brand.alt}
                   width={180}
                   height={80}

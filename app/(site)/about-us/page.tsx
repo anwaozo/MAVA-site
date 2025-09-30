@@ -8,22 +8,13 @@ import CoreValues from "../components/core-values";
 import WhatWeDo from "../components/what-we-do";
 import OrjiVision from "../components/orji-vision";
 import FAQSection from "../components/faq-section";
-import {
-  getBrochureFile,
-  getCoreValuesContent,
-  getFaqContent,
-  getPageSeo,
-  getPfoVisionContent,
-  getsuccessStoryContent,
-  getValuePropositionContent,
-  getWhoWeAreContent,
-} from "@/sanity/sanity-utils";
+import { getAboutPageContent, getAboutSeo } from "@/sanity/lib/sanity-utils";
 
 export const dynamic = "force-static";
 export const revalidate = 60;
 
 export const generateMetadata = async () => {
-  const aboutUsSeo = await getPageSeo("about");
+  const aboutUsSeo = await getAboutSeo();
   return {
     title: aboutUsSeo.title,
     description: aboutUsSeo.description,
@@ -31,13 +22,16 @@ export const generateMetadata = async () => {
 };
 
 const page = async () => {
-  const brochure = await getBrochureFile();
-  const valuePropositionsData = await getValuePropositionContent();
-  const whoWeAreData = await getWhoWeAreContent();
-  const coreValuesData = await getCoreValuesContent();
-  const pfoVisionData = await getPfoVisionContent();
-  const faqSectionData = await getFaqContent();
-  const successStoryContent = await getsuccessStoryContent();
+  const aboutData = await getAboutPageContent();
+  const servicesData = aboutData.services;
+  const valuePropositionsData = aboutData.valueProposition;
+  const whoWeAreData = aboutData.whoWeAre;
+  const coreValuesData = aboutData.coreValues;
+  const pfoVisionData = aboutData.pfoVision;
+  const faqSectionData = aboutData.faq;
+  const successStoryContent = aboutData.successStory;
+
+  console.log(servicesData);
 
   return (
     <div className="overflow-x-hidden">
@@ -48,16 +42,14 @@ const page = async () => {
           { label: "Our Story" },
         ]}
       />
-      <ServicesSection brochure={brochure} />
-      <ValueProposition
-        propositionData={valuePropositionsData.valueProposition.items}
-      />
-      <SuccessStory successStoryContent={successStoryContent.successStory} />
-      <WhoWeAre whoWeAreData={whoWeAreData.whoWeAre} />
-      <CoreValues coreValuesData={coreValuesData.coreValues} />
+      <ServicesSection servicesData={servicesData} />
+      <ValueProposition propositionData={valuePropositionsData} />
+      <SuccessStory successStoryContent={successStoryContent} />
+      <WhoWeAre whoWeAreData={whoWeAreData} />
+      <CoreValues coreValuesData={coreValuesData} />
       <WhatWeDo />
-      <OrjiVision pfoVisionData={pfoVisionData.ourVision} />
-      <FAQSection faqData={faqSectionData.faq} />
+      <OrjiVision pfoVisionData={pfoVisionData} />
+      <FAQSection faqData={faqSectionData} />
     </div>
   );
 };

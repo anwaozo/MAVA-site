@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { getSocialLinks } from "@/sanity/sanity-utils";
+import { getSocialMediaLinks } from "@/sanity/lib/sanity-utils";
 import { social } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,7 +30,7 @@ const footerLinks = [
 ];
 
 const Footer = async () => {
-  const socialLinks: social[] = await getSocialLinks();
+  const socialLinks: social[] = await getSocialMediaLinks();
   // console.log(socialLinks);
   return (
     <footer className="bg-[#001B13] py-20">

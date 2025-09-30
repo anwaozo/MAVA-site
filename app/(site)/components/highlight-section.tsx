@@ -1,8 +1,5 @@
+import { getHomePageContent } from "@/sanity/lib/sanity-utils";
 import ReusableCarousel from "./reusable-carousel";
-import {
-  getWorkHighlights,
-  getWorkHighlightsContent,
-} from "@/sanity/sanity-utils";
 
 const titleData = {
   title: "THINGS YOU SHOULD SEE",
@@ -12,14 +9,15 @@ const titleData = {
 };
 
 const WorkHighlights = async () => {
-  const workHighlightsData = await getWorkHighlightsContent();
-  // console.log(workHighlightsData.workHighlights);
+  const homeData = await getHomePageContent();
+  const workHighlightsData = homeData.workHighlights;
+
   return (
     <div data-aos="fade-up">
       <ReusableCarousel
         titleData={titleData}
         title="Our work highlights."
-        cardData={workHighlightsData.workHighlights.items}
+        cardData={workHighlightsData}
         autoPlayInterval={5000}
         pauseOnInteraction={10000}
         isButton={true}

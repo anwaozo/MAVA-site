@@ -11,11 +11,15 @@ const titleData = {
 };
 
 const ServicesSection = ({
-  brochure,
+  servicesData,
 }: {
-  brochure: { file: { asset: { url: string } }; description: string };
+  servicesData: {
+    brochure: { file: { asset: { url: string } }; description: string };
+    title: string;
+    image: string;
+  };
 }) => {
-  const brochureFile = brochure?.file?.asset?.url || null;
+  const brochureFile = servicesData.brochure?.file?.asset?.url || null;
 
   return (
     <section
@@ -39,10 +43,8 @@ const ServicesSection = ({
               <ReusableTitle {...titleData} />
             </div>
 
-            <h2 className="text-2xl md:text-6xl font-bold text-[#034833] leading-tight">
-              More than an
-              <br />
-              institution.
+            <h2 className="text-2xl md:text-6xl max-w-sm font-bold text-[#034833] leading-tight">
+              {servicesData.title}
             </h2>
 
             {brochureFile ? (
@@ -79,7 +81,7 @@ const ServicesSection = ({
           <div className="relative">
             <div className="relative rounded-xl lg:rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/services.png"
+                src={servicesData.image}
                 alt="Students with international flags"
                 width={600}
                 height={400}

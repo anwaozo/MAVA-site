@@ -1,12 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import { CoreValuesSection } from "@/types/project";
+import { CoreValue, CoreValuesSection } from "@/types/project";
 
-const CoreValues = ({
-  coreValuesData,
-}: {
-  coreValuesData: CoreValuesSection;
-}) => {
+const CoreValues = ({ coreValuesData }: { coreValuesData: CoreValue[] }) => {
   function formatCoreValueNumber(num: number): string {
     return num < 10 ? `0${num}` : `${num}`;
   }
@@ -33,7 +29,7 @@ const CoreValues = ({
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:items-center gap-6 lg:gap-4 w-full">
-            {coreValuesData?.values?.map((item, index) => (
+            {coreValuesData?.map((item, index) => (
               <div
                 key={index}
                 className="inline-flex items-center h-full w-full"

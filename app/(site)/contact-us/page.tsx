@@ -2,11 +2,13 @@ import React from "react";
 import ReusableHero from "../components/reusable-hero";
 import TalkToUs from "../components/talk-to-us";
 import RegisterCohort from "../components/register-cohort";
-import Map from "../components/map";
-import { getContactDetailsContent, getPageSeo } from "@/sanity/sanity-utils";
+import {
+  getContactPageContent,
+  getContactSeo,
+} from "@/sanity/lib/sanity-utils";
 
 export const generateMetadata = async () => {
-  const contactUsSeo = await getPageSeo("contact");
+  const contactUsSeo = await getContactSeo();
   return {
     title: contactUsSeo.title,
     description: contactUsSeo.description,
@@ -14,8 +16,9 @@ export const generateMetadata = async () => {
 };
 
 const page = async () => {
-  const contactDetails = await getContactDetailsContent();
-  // console.log("contactDetails", contactDetails);
+  const contactPageData = await getContactPageContent();
+  const contactDetails = contactPageData.contactDetails;
+  console.log("contactDetails", contactDetails);
   return (
     <div className="overflow-x-hidden">
       <ReusableHero
@@ -24,7 +27,6 @@ const page = async () => {
       />
       <TalkToUs contactDetails={contactDetails.contactDetails} />
       <RegisterCohort />
-      <Map />
     </div>
   );
 };

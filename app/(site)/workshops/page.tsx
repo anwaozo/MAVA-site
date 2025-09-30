@@ -6,17 +6,12 @@ import Workshops from "../components/workshops";
 import TestimonialsSection from "../components/testimonials-section";
 import RegisterCohort from "../components/register-cohort";
 import {
-  getEmpoweringCreativesContent,
-  getPageSeo,
-  getSeoData,
-  getShapingLivesContent,
-  getTestimonials,
-  getTestimonialsContent,
-  getWorkshopImagesContent,
-} from "@/sanity/sanity-utils";
+  getWorkshopPageContent,
+  getWorkshopSeo,
+} from "@/sanity/lib/sanity-utils";
 
 export const generateMetadata = async () => {
-  const workshopSeo = await getPageSeo("workshop");
+  const workshopSeo = await getWorkshopSeo();
   return {
     title: workshopSeo.title,
     description: workshopSeo.description,
@@ -24,26 +19,22 @@ export const generateMetadata = async () => {
 };
 
 const page = async () => {
-  const shapingLivesData = await getShapingLivesContent();
-  const empoweringCreativesData = await getEmpoweringCreativesContent();
-  const testimonialsContent = await getTestimonialsContent();
-  const workshopSectionData = await getWorkshopImagesContent();
+  const workshopPageContent = await getWorkshopPageContent();
+  const shapingLivesData = workshopPageContent.shapingLives;
+  const empoweringCreativesData = workshopPageContent.empoweringCreatives;
+  const testimonialsContent = workshopPageContent.testimonials;
+  const workshopSectionData = workshopPageContent.workshopGallery;
 
-  // console.log(workshopSectionData);
   return (
     <div className="overflow-x-hidden">
       <ReusableHero
         title={"Workshops"}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "workshops" }]}
       />
-      <ShapingLivesSection shapingLivesData={shapingLivesData.shapingLives} />
-      <EmpoweringCreatives
-        empoweringCreativesData={empoweringCreativesData.empoweringCreatives}
-      />
-      <Workshops workshopSectionData={workshopSectionData.workshopImages} />
-      <TestimonialsSection
-        testimonialsData={testimonialsContent.testimonials.items}
-      />
+      <ShapingLivesSection shapingLivesData={shapingLivesData} />
+      <EmpoweringCreatives empoweringCreativesData={empoweringCreativesData} />
+      <Workshops workshopSectionData={workshopSectionData} />
+      <TestimonialsSection testimonialsData={testimonialsContent} />
       <RegisterCohort />
     </div>
   );

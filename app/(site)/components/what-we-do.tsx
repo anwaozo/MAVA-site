@@ -1,5 +1,5 @@
+import { getAboutPageContent } from "@/sanity/lib/sanity-utils";
 import ReusableCarousel from "./reusable-carousel";
-import { getWhatWeDo, getWhatWeDoContent } from "@/sanity/sanity-utils";
 
 const titleData = {
   title: "Empowering visual enthusiasts to learn and create.",
@@ -9,14 +9,15 @@ const titleData = {
 };
 
 const WhatWeDo = async () => {
-  const whatWeDoData = await getWhatWeDoContent();
+  const aboutData = await getAboutPageContent();
+  const whatWeDoData = aboutData.whatWeDo;
 
   return (
     <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <ReusableCarousel
         titleData={titleData}
         title="What we do"
-        cardData={whatWeDoData?.whatWeDo?.items}
+        cardData={whatWeDoData}
         autoPlayInterval={5000}
         pauseOnInteraction={10000}
       />

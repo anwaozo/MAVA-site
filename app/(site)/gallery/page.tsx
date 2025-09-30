@@ -1,10 +1,13 @@
 import React from "react";
 import ReusableHero from "../components/reusable-hero";
 import Gallery from "../components/gallery";
-import { getGalleryImages, getPageSeo } from "@/sanity/sanity-utils";
+import {
+  getGalleryPageContent,
+  getGallerySeo,
+} from "@/sanity/lib/sanity-utils";
 
 export const generateMetadata = async () => {
-  const gallerySeo = await getPageSeo("gallery");
+  const gallerySeo = await getGallerySeo();
   return {
     title: gallerySeo.title,
     description: gallerySeo.description,
@@ -12,9 +15,9 @@ export const generateMetadata = async () => {
 };
 
 const page = async () => {
-  const galleryData = await getGalleryImages();
+  const galleyPageData = await getGalleryPageContent();
+  const galleryData = galleyPageData.gallerySections;
 
-  // console.log("Gallery Data: ", galleryData.galleryImages);
   return (
     <div className="overflow-x-hidden">
       <ReusableHero
@@ -24,7 +27,7 @@ const page = async () => {
           { label: "Gallery" },
         ]}
       />
-      <Gallery galleryData={galleryData.galleryImages} />
+      <Gallery galleryData={galleryData} />
     </div>
   );
 };
