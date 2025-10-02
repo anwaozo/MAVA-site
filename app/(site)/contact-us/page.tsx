@@ -18,7 +18,7 @@ export const generateMetadata = async () => {
 const page = async () => {
   const contactPageData = await getContactPageContent();
   const contactDetails = contactPageData.contactDetails;
-  console.log("contactDetails", contactDetails);
+  // console.log("contactDetails", contactDetails);
   return (
     <div className="overflow-x-hidden">
       <ReusableHero

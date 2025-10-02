@@ -8,8 +8,7 @@ import SuccessStory from "./components/success-story-section";
 import TestimonialsSection from "./components/testimonials-section";
 import { getHomePageContent, getHomeSeo } from "@/sanity/lib/sanity-utils";
 
-export const dynamic = "force-static";
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const generateMetadata = async () => {
   const homeSeo = await getHomeSeo();
@@ -27,7 +26,7 @@ const page = async () => {
   const visionContent = homeData.ourVision;
   const successStoryContent = homeData.successStory;
   const testimonialsContent = homeData.testimonials;
-  console.log(featuresContent);
+  // console.log(featuresContent);
 
   return (
     <>

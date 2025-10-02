@@ -17,7 +17,7 @@ const page = async () => {
   const legacyData = legacyPageData.legacySlides;
   const notesFromLovers = legacyPageData.notesFromLovers;
 
-  console.log(legacyData);
+  // console.log(legacyData);
 
   return (
     <div className="overflow-x-hidden">
