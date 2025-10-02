@@ -129,7 +129,12 @@ export async function getHomePageContent() {
       quote,
       author
     }
-  }`);
+  }`, {}, {
+    next: { 
+      revalidate: 60,
+      tags: ['home-content'] 
+    }
+  });
 }
 
 export async function getAboutPageContent() {
@@ -194,7 +199,12 @@ export async function getAboutPageContent() {
         answer
       }
     }
-  }`);
+  }`, {}, {
+    next: { 
+      revalidate: 60,
+      tags: ['about-content'] 
+    }
+  });
 }
 
 export async function getLegacyPageContent() {
@@ -212,7 +222,12 @@ export async function getLegacyPageContent() {
       textColor,
       bgColor
     }
-  }`);
+  }`, {}, {
+    next: { 
+      revalidate: 60,
+      tags: ['legacy-content'] 
+    }
+  });
 }
 
 export async function getWorkshopPageContent() {
@@ -242,7 +257,12 @@ export async function getWorkshopPageContent() {
       quote,
       author
     }
-  }`);
+  }`, {}, {
+    next: { 
+      revalidate: 60,
+      tags: ['workshop-content'] 
+    }
+  });
 }
 
 export async function getGalleryPageContent() {
@@ -255,7 +275,12 @@ export async function getGalleryPageContent() {
         alt
       }
     }
-  }`);
+  }`, {}, {
+    next: { 
+      revalidate: 60,
+      tags: ['gallery-content'] 
+    }
+  });
 }
 
 export async function getContactPageContent() {
@@ -269,5 +294,10 @@ export async function getContactPageContent() {
         openingHours
       },
     }
-  }`);
+  }`, {}, {
+    next: { 
+      revalidate: 60,
+      tags: ['contact-content'] 
+    }
+  });
 }

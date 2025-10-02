@@ -7,4 +7,9 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  perspective: 'published', // Only fetch published documents
+  stega: {
+    enabled: false, // Disable for production
+    studioUrl: '/admin',
+  },
 })
