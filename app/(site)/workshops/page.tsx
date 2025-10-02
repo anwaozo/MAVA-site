@@ -10,6 +10,9 @@ import {
   getWorkshopSeo,
 } from "@/sanity/lib/sanity-utils";
 
+export const dynamic = "force-static";
+export const revalidate = 60;
+
 export const generateMetadata = async () => {
   const workshopSeo = await getWorkshopSeo();
   return {

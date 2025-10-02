@@ -10,7 +10,8 @@ import OrjiVision from "../components/orji-vision";
 import FAQSection from "../components/faq-section";
 import { getAboutPageContent, getAboutSeo } from "@/sanity/lib/sanity-utils";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
+export const revalidate = 60;
 
 export const generateMetadata = async () => {
   const aboutUsSeo = await getAboutSeo();
